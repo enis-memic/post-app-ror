@@ -70,3 +70,9 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
+
+gem 'devise', '~> 4.9'
+
+gem 'cancancan', '~> 1.9'
+
+gem 'devise-jwt'
