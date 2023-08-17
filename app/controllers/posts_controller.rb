@@ -1,14 +1,48 @@
 class PostsController < ApplicationController
+    
+
 
     def index
-        @user = User.find(params[:user_id])
-        @pagy, @posts = pagy(@user.posts, items: 2)
+        @pagy, @posts = pagy(Post.all, items: 10)
     end
 
     def show
-        @user = User.find(params[:user_id])
-        @posts = Post.find(params[:id])
-        @comments = @posts.comments
-    end
+        @post = Post.includes(:author, comments: [:author]).find(params[:id])
+        @comments = @post.comments
+      end
+    
+      def new
+        @post = Post.new
+      end
+    
+      def create
+        @post = Post.new(post_params)
+        @post.author_id = current_user.id
+        if @post.save
+            redirect_to posts_path, notice: 'New post added successfully.'
+        else
+          render :new
+        end
+      end
+    
+      def destroy
+        @post = Post.find(params[:id])
+        @post.comments.destroy_all
+        if @post.destroy
+          redirect_to posts_path(current_user.id)
+        else
+          render :new
+        end
+      end
+    
+      private
+    
+      def post_params
+        params.require(:post).permit(:title, :description)
+      end
 
+      def set_user_and_posts
+        @user = current_user
+        @posts = @user.posts
+      end
 end
