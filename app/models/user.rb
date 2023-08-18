@@ -10,6 +10,6 @@ class User < ApplicationRecord
   has_many :comments, foreign_key: 'author_id'
   
   def recent_posts
-    posts.order(created_at: :desc)
+    posts.order(created_at: :asc)
   end
 end
