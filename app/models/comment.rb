@@ -9,6 +9,8 @@ class Comment < ApplicationRecord
     def decrement_comments_counter
       post.decrement!(:comment_counter)
     end
+
+    after_destroy :decrement_comments_counter
   
     after_save :update_comments_counter
   end
