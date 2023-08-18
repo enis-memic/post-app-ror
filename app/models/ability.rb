@@ -6,15 +6,12 @@ class Ability
       if user.role == 'admin'
         can :manage, :all
       else
-        can :destroy, Post do |post|
-          post.author == user
-        end
-        can :destroy, Comment do |comment|
-          comment.author == user
-        end
-        can :create, Post
-        can :create, Comment
-        can :read, :all
+        can [:edit, :update], Post, author_id: user.id
+      can :destroy, Post, author_id: user.id, comment_counter: 0
+      can :destroy, Comment, author_id: user.id
+      can :create, Post
+      can :create, Comment
+      can :read, :all
       end
     end
   end
