@@ -2,7 +2,11 @@ class CommentsController < ApplicationController
   load_and_authorize_resource
   def new
     @post = Post.find(params[:post_id])
-    @comments = Comment.new
+    if user_signed_in?
+      @comments = Comment.new
+    else
+      redirect_to new_user_session_path, alert: "You need to sign in to add a comment."
+    end
   end
 
   def create
