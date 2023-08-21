@@ -1,6 +1,12 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container d-flex justify-content-between align-items-center">
-    <h1 class="text-center mb-0">Post APP</h1>
+    <% if current_page?(root_path) %> <!-- Check if on the home page -->
+      <h1 class="text-center mb-0">Post APP</h1>
+    <% else %>
+      <div>
+        <%= link_to "Back", root_path, class: "btn btn-secondary" %>
+      </div>
+    <% end %>
     <div>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
