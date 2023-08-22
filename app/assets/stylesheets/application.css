@@ -1,15 +1,340 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+body {
+  background-color: #f7f9fa;
+}
+
+.navbar {
+  background-color: #ffffff;
+  border-bottom: 1px solid #e1e8ed;
+}
+
+.navbar h1 {
+  font-size: 24px;
+  font-weight: bold;
+  color: #1da1f2;
+}
+
+.navbar-toggler {
+  border: none;
+  background-color: transparent;
+}
+
+.navbar-toggler-icon {
+  background-color: #1da1f2;
+}
+
+.navbar-nav .nav-link {
+  color: #1da1f2;
+}
+
+.navbar-nav .btn {
+  padding: 5px 12px;
+  font-size: 14px;
+  border-radius: 20px;
+}
+
+.navbar-nav .btn-primary {
+  background-color: #1da1f2;
+  border-color: #1da1f2;
+  color: #ffffff;
+}
+
+.navbar-nav .btn-secondary {
+  background-color: transparent;
+  border-color: #e1e8ed;
+  color: #333333;
+}
+
+.navbar-nav .btn-primary:hover,
+.navbar-nav .btn-secondary:hover {
+  opacity: 0.85;
+}
+
+.navbar-nav .nav-item:not(:last-child) {
+  margin-right: 15px;
+}
+
+.navbar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media (max-width: 767px) {
+  .navbar h1 {
+    font-size: 20px;
+  }
+}
+
+.navbar {
+  background-color: #ffffff;
+  border-bottom: 1px solid #e1e8ed;
+}
+
+.navbar h1 {
+  font-size: 24px;
+  font-weight: bold;
+  color: #1da1f2;
+}
+
+.card-main {
+  border: 1px solid #e1e8ed;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card-main:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+  background-color: #f5f8fa;
+  border-bottom: none;
+}
+
+.card-header h5 {
+  font-size: 18px;
+  font-weight: bold;
+  color: #1da1f2;
+}
+
+.card-header p {
+  font-size: 14px;
+  color: #657786;
+}
+
+.card-body {
+  padding: 15px;
+}
+
+.card-title {
+  font-size: 20px;
+  font-weight: bold;
+  color: #14171a;
+}
+
+.card-text {
+  font-size: 16px;
+  color: #657786;
+}
+
+.btn-primary {
+  background-color: #1da1f2;
+  border-color: #1da1f2;
+}
+
+.btn-outline-primary {
+  color: #1da1f2;
+  border-color: #1da1f2;
+}
+
+a {
+  color: #1da1f2;
+}
+
+a:hover {
+  color: #0c85d0;
+}
+
+.d-flex.justify-content-center {
+  margin-top: 20px;
+}
+
+.card-body {
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #d3d6db #f5f8fa;
+}
+
+.card-body::-webkit-scrollbar {
+  width: 8px;
+}
+
+.card-body::-webkit-scrollbar-thumb {
+  background-color: #f5f8fa;
+}
+
+.card-body::-webkit-scrollbar-track {
+  background-color: #d3d6db;
+}
+
+/* Styling for the post detail page */
+.post-page .post-card {
+  background-color: #ffffff;
+  border: 1px solid #e1e8ed;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  margin-bottom: 20px;
+  width: 100%; /* Make the card wider */
+  max-width: 1200px; /* Set maximum width for larger screens */
+  overflow: hidden; /* Ensure card contents don't overflow */
+}
+
+.post-page .post-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.15);
+}
+
+.post-page .post-card-header {
+  background-color: #1da1f2;
+  border-radius: 8px 8px 0 0;
+  padding: 15px;
+}
+
+.post-page .post-card-header h5 {
+  margin: 0;
+  color: white;
+}
+
+.post-page .post-card-body {
+  padding: 20px;
+}
+
+.post-page .post-card-body p {
+  margin: 0;
+}
+
+.post-page .post-card-footer {
+  padding: 15px 20px;
+  border-radius: 0 0 8px 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 200px;
+}
+
+.post-page .post-card-footer .btn {
+  padding: 8px 20px;
+  font-size: 14px;
+  border-radius: 20px;
+}
+
+.post-page .post-card-footer .btn-primary {
+  background-color: #1da1f2;
+  border-color: #1da1f2;
+  color: #ffffff;
+}
+
+.post-page .post-card-footer .btn-secondary {
+  background-color: #e1e8ed;
+  border-color: #e1e8ed;
+  color: #333333;
+}
+
+.post-page .post-card-footer .btn-outline-danger {
+  color: #dc3545;
+  border-color: #dc3545;
+}
+
+.post-page .post-card-footer .btn:hover {
+  opacity: 0.85;
+}
+
+/* Responsive adjustments */
+@media (max-width: 767px) {
+  .post-card {
+    width: 90%;
+  }
+  .post-page .d-flex.align-items-center.justify-content-between {
+    width: 100%;
+  }
+}
+
+/* Styling for the edit post form */
+.edit-post.card {
+  border: 1px solid #e1e8ed;
+  border-radius: 8px;
+  margin-top: 50px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.edit-post.card-header {
+  background-color: #1da1f2;
+  border-radius: 8px 8px 0 0;
+  padding: 15px;
+}
+
+.edit-post.card-header h2.card-title {
+  margin: 0;
+  color: white;
+}
+
+.edit-post.card-body {
+  padding: 20px;
+}
+
+.edit-post.form-label {
+  font-weight: bold;
+}
+
+.edit-post.form-control {
+  border: 1px solid #e1e8ed;
+  border-radius: 4px;
+  padding: 8px 12px;
+  width: 100%;
+}
+
+.edit-post.form-control:focus {
+  border-color: #1da1f2;
+  box-shadow: none;
+}
+
+.edit-post.textarea.form-control {
+  resize: vertical;
+}
+
+.edit-post.btn-primary {
+  background-color: #1da1f2;
+  border-color: #1da1f2;
+  color: #ffffff;
+}
+
+.edit-post.btn-primary:hover {
+  background-color: #0f8efc;
+  border-color: #0f8efc;
+}
+
+/* Responsive adjustments */
+@media (max-width: 767px) {
+  .edit-post.card {
+    max-width: 90%;
+    margin-top: 30px;
+  }
+}
+
+/* Styling for the New Post Form */
+.new-post {
+  max-width: 600px;
+  margin: auto;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border: 1px solid #d6d8db;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.new-post h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.new-post .form-control {
+  padding: 12px;
+  border: 1px solid #ced4da;
+  border-radius: 6px;
+  background-color: #fff;
+  color: #495057;
+}
+
+.new-post .btn-primary {
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 6px;
+}
+
+.new-post .mb-3 {
+  margin-bottom: 15px;
+}
